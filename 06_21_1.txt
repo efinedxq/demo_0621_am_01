@@ -1,0 +1,111 @@
+1.List 集合
+a)特点：
+	i)先进先出
+	ii)数据可以重复
+b)如何使用：必须先使用 import  把 需要的类和接口引入
+	import java.util.*;
+	i)创建集合对象(集合类型的变量)
+		使用其 实现类  ArrayList
+		List list=new ArrayList();
+	ii)常用的操作
+		add(Object obj)  : 负责 把 数据添加到集合中
+		get(int index)   : 负责按照下标 获取对应的数据
+						    第一个位置的下标 为  0
+						注意 下标 不能超过 长度-1
+		size()			: 返回 集合中存放元素的个数					
+	iii)使用循环遍历 集合
+		1)普通集合，就是在声明集合对象的时候 没有使用 泛型
+			List list=new ArrayList();
+			for(int i=0;i<list.size();i++){
+				Object obj=list.get(i);
+			}
+		2)泛型集合，就是指明集合中存放元素的类型
+			泛型的类型，可以是任意的引用类型
+				String
+				List
+				Integer		对应的是  基本类型中的  int
+				Double							    double
+			List<String> list=new ArrayList<String>();
+			a)使用普通的循环
+				for(int i=0;i<list.size();i++){
+					String str=list.get(i);
+				}
+			b)加强的for循环（forEach）
+				for(数据类型 变量名 ：集合){
+					
+				}
+				
+				for(String str:list){
+					
+				}
+	
+2.Map 集合：以 键值对的方式存放数据
+		key 对应 一个  value
+a)特点：
+	1) 是 键值对的存放方式
+	2) key 不能重复，重复 发生 覆盖
+	3) key 可以 为 null 有且只有一个
+	4) value 任意类型
+b)使用
+	1)使用import 引入Map 集合所在的包 java.util 中
+	2) 使用其实现类 HashMap 构建对象
+		Map map=new HashMap();
+		Map<String,String> names=new HashMap<String,String>();
+	3)常用的方法：
+		put(key,value)  :是把一个键值对 存放到Map中
+		get(key)        :以 key 获取对应的value 值
+		size()			:获取Map集合中键值对的个数
+	
+c)作用：用于存放 数据库中表内每一行的记录	
+		
+		
+练习一：获取 字符串中 每一个字母的出现 次数
+	abcdaedcf
+	a:2
+	b:1
+	c:1
+	d:2
+	e:1
+	f:1
+分析：使用Map实现：
+	1)获取 字符串中的每一个字母
+		charAt(int index) :根据下标获取对应位置上 的字符
+		substring(int begin,int end): 获取begin和end之间的字符串
+		
+	2)以 该字母 为 key 以 出现的次数 为 value 存放在map中
+	3)在向map中村该字母的时候 先 获取对应的值
+		如果获取到了 该值 加 1 后再 存在map中
+		如果没有找到 该值设置为 1 存在 map中
+		
+	
+	
+	
+	
+	
+练习二：使用集合存放 5 个学生的信息
+	学号：
+	姓名：
+	性别：
+	微信：
+	
+	使用 Map 存放一个学生的信息	创建 五个 Map 分别存放五个人信息
+	
+	在把 每一个 map 保存在 List 中
+	
+	为了使用 for 循环
+	
+	学号	姓名	性别	微信
+	001		无敌	 男		wudi
+	007		无双	 女		xiaoshuang
+		
+作业：统计 a-z每一个字母 在 给定字符串中出现的次数		
+	忽略大小写
+	1)使用toUpperCase 转换为统一的格式后再统计次数
+	2)如何获取 A-Z的字母
+		List<String> list=new ArrayList();
+		list.add("A");
+		....
+		list.add("Z");	
+		
+		
+	
